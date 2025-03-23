@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Imagens/Lancamissil.png" type="Texture" id=1]
+[ext_resource path="res://Script_LancaMissil.gd" type="Script" id=2]
+[ext_resource path="res://Imagens/Missiles.png" type="Texture" id=3]
+[ext_resource path="res://Sons/Missil_Lancado.tres" type="AudioStream" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 40.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Corpo" type="Sprite" parent="."]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+
+[node name="LancaMissil" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LancaMissil"]
+shape = SubResource( 1 )
+
+[node name="Missil" type="Sprite" parent="LancaMissil"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 186.028, 275.5, 128.332, 37.0633 )
+
+[node name="Position2D" type="Position2D" parent="LancaMissil"]
+
+[node name="Timer" type="Timer" parent="LancaMissil"]
+
+[node name="Tiro_Inimigo" type="AudioStreamPlayer2D" parent="LancaMissil"]
+stream = ExtResource( 4 )
+bus = "Efeitos"
+
+[connection signal="area_entered" from="LancaMissil" to="LancaMissil" method="Acerto_Dano"]
+[connection signal="body_entered" from="LancaMissil" to="LancaMissil" method="Toque_Dano"]
+[connection signal="timeout" from="LancaMissil/Timer" to="LancaMissil" method="Torreta_Recarregada"]

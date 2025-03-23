@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/morte personagem.mp3-53ee99f3ec8de236b3ca1d595f61a537.mp3str"
+
+[deps]
+
+source_file="res://Sons/morte personagem.mp3"
+dest_files=[ "res://.import/morte personagem.mp3-53ee99f3ec8de236b3ca1d595f61a537.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

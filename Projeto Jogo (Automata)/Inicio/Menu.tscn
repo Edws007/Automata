@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Inicio/Menu.gd" type="Script" id=1]
+[ext_resource path="res://background/151079-elite-dangerous-space-hd-wallpaper-desktop-and-mobile-image.jpg" type="Texture" id=2]
+[ext_resource path="res://fonts/connection/ConnectionBold.otf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 41
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 3 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = -1.0
+margin_right = -1577.0
+margin_bottom = -819.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="151079-elite-dangerous-space-hd-wallpaper-desktop-and-mobile-image" type="Sprite" parent="Background"]
+position = Vector2( 960, 540 )
+scale = Vector2( 1, 1.1 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 760.0
+margin_top = 480.0
+margin_right = 1160.0
+margin_bottom = 580.0
+custom_fonts/font = SubResource( 1 )
+text = "AUTOMATA"
+align = 1
+valign = 1
+
+[node name="Opções" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 860.0
+margin_top = 600.0
+margin_right = -860.0
+margin_bottom = -250.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Jogar" type="Button" parent="Opções" groups=["button"]]
+margin_top = 82.0
+margin_right = 200.0
+margin_bottom = 105.0
+focus_mode = 0
+custom_fonts/font = SubResource( 2 )
+enabled_focus_mode = 0
+text = "JOGAR"
+
+[node name="Sair" type="Button" parent="Opções" groups=["button"]]
+margin_top = 125.0
+margin_right = 200.0
+margin_bottom = 148.0
+focus_mode = 0
+custom_fonts/font = SubResource( 3 )
+enabled_focus_mode = 0
+text = "SAIR"

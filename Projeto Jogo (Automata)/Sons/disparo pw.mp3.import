@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/disparo pw.mp3-7023fbf665149b5eb668e7935f751b6c.mp3str"
+
+[deps]
+
+source_file="res://Sons/disparo pw.mp3"
+dest_files=[ "res://.import/disparo pw.mp3-7023fbf665149b5eb668e7935f751b6c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

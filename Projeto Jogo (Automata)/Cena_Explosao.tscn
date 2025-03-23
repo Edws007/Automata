@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Imagens/Explosao.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Fase1"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 96, 104, 40, 40 ), Rect2( 184, 72, 128, 103 ), Rect2( 347, 32, 215, 176 ), Rect2( 587, 32, 216, 180 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Fase2"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 587, 32, 216, 180 ), Rect2( 100, 244, 180, 179 ), Rect2( 364, 244, 179, 179 ), Rect2( 612, 251, 165, 165 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 184, 72, 128, 103 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 184, 72, 128, 103 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Fase1 = SubResource( 1 )
+anims/Fase2 = SubResource( 3 )
+anims/RESET = SubResource( 2 )
